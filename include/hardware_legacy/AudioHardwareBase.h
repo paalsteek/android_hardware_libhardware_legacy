@@ -46,7 +46,11 @@ public:
     virtual String8     getParameters(const String8& keys);
 
     virtual  size_t     getInputBufferSize(uint32_t sampleRate, int format, int channelCount);
+
+// Engle, 添加音频兼容性
+#if !defined(ICS_AUDIO_BLOB) && !defined(USES_AUDIO_LEGACY)
     virtual status_t    getMasterVolume(float *volume);
+#endif
 
     /**This method dumps the state of the audio hardware */
     virtual status_t dumpState(int fd, const Vector<String16>& args);

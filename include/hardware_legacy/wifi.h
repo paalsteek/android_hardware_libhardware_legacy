@@ -21,6 +21,9 @@
 extern "C" {
 #endif
 
+// Engle, 添加WLAN热点支持
+int hotspot_load_driver();
+int hotspot_unload_driver();
 /**
  * Load the Wi-Fi driver.
  *
